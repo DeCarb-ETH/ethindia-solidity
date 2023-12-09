@@ -30,7 +30,7 @@ contract VotingSystem {
         candidates[1] = Candidate({name: "Reject", voteCount: 0});
         votingStarted = false;
     }
-
+    //to start the voting process
     function startVoting(uint startID) public {
         require(msg.sender == owner, "Only owner can start the voting.");
         require(!votingStarted, "Voting has already started.");
@@ -39,7 +39,7 @@ contract VotingSystem {
         votingEndTime = votingStartTime + 100; 
         votingStarted = true;
     }
-
+    //voting
     function vote(uint candidateIndex) public onlyDuringVotingPeriod {
         require(!voters[msg.sender].voted, "Already voted.");
         require(candidateIndex < 2, "Invalid candidate.");
@@ -48,7 +48,7 @@ contract VotingSystem {
         voters[msg.sender].vote = candidateIndex;
         candidates[candidateIndex].voteCount += 1;
     }
-
+    //results
     function winningCandidate() public view returns (uint winningCandidateIndex, uint voteCount1, uint voteCount2) {
     require(votingStarted, "Voting has not started.");
     require(block.timestamp > votingEndTime, "Voting period has not ended yet.");
