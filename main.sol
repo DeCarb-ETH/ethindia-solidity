@@ -10,6 +10,7 @@ contract ResearchPaperRegistry {
         owner = payable(msg.sender);
     }
     address payable public owner;
+    address[] public users;
     mapping(address => Scientist) public scientists;
 
     // Function to add a new scientist
@@ -42,13 +43,23 @@ contract ResearchPaperRegistry {
     }
 
     function deposit() public payable {
-        require(msg.value == 0.5 ether, "Deposit amount must be 0.4 ETH");
+        require(msg.value == 1 ether, "Deposit amount must be 1 ETH");
     }
 
-    function withdraw() public {
-        require(msg.sender == owner, "Only the owner can withdraw");
-        require(address(this).balance >= 1 ether, "Not enough balance");
-        owner.transfer(0.5 ether);
-    }
+    // Function to add a user to the registry
+    function addUser(address userAddress) external {
+        require(userAddress != address(0), "Invalid user address");
+        require(!isUserRegistered(userAddress), "User is already registered");
 
+        users.push(userAddress);
+    }
+    // Function to check if a user is already registered
+    function isUserRegistered(address userAddress) public view returns (bool) {
+        for (uint256 i = 0; i < users.length; i++) {
+            if (users[i] == userAddress) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
