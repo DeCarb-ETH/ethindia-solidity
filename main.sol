@@ -9,7 +9,7 @@ contract safeTransfer {
     }
 
     function deposit() public payable {
-        require(msg.value == 0.5 ether, "Deposit amount must be 0.4 ETH");
+        require(msg.value == 0.5 ether, "Deposit amount must be 0.5 ETH");
     }
 
     function withdraw() public {
