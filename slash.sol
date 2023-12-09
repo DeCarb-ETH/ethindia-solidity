@@ -8,7 +8,7 @@ contract DisputeContract {
     constructor() {
         owner = payable(msg.sender);
     }
-
+    // salshing stake of user
     function slashStake(address user) public {
         require(msg.sender == owner, "Only the owner can slash stakes");
         require(stakes[user] >= 0.1 ether, "User does not have enough stake");
