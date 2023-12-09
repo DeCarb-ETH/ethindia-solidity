@@ -13,5 +13,8 @@ A decentralized platform that facilitates scientists and researchers in publishi
 - [token](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/token.sol) :=
 - [vote](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/vote.sol) :=
 
+## Working
+! (https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/Working.png)
+
 
 
