@@ -34,9 +34,9 @@ contract VotingSystem {
     function startVoting(uint startID) public {
         require(msg.sender == owner, "Only owner can start the voting.");
         require(!votingStarted, "Voting has already started.");
-        require(startID == 12345, "Invalid start ID."); // Replace 12345 with the actual start ID
+        require(startID == 12345, "Invalid start ID."); 
         votingStartTime = block.timestamp;
-        votingEndTime = votingStartTime + 100; // Set the voting period to 5 minutes
+        votingEndTime = votingStartTime + 100; 
         votingStarted = true;
     }
 
@@ -49,17 +49,18 @@ contract VotingSystem {
         candidates[candidateIndex].voteCount += 1;
     }
 
-    function winningCandidate() public view returns (uint winningCandidateIndex) {
-        require(votingStarted, "Voting has not started.");
-        require(block.timestamp > votingEndTime, "Voting period has not ended yet.");
-        if (candidates[0].voteCount > candidates[1].voteCount) {
-            winningCandidateIndex = 0;
-        } else if (candidates[0].voteCount < candidates[1].voteCount) {
-            winningCandidateIndex = 1;
-        } else {
-            // In case of a tie, we can decide how to handle it.
-            // For now, we'll return a special index indicating a tie.
-            winningCandidateIndex = 2;
-        }
+    function winningCandidate() public view returns (uint winningCandidateIndex, uint voteCount1, uint voteCount2) {
+    require(votingStarted, "Voting has not started.");
+    require(block.timestamp > votingEndTime, "Voting period has not ended yet.");
+    if (candidates[0].voteCount > candidates[1].voteCount) {
+        winningCandidateIndex = 0;
+    } else if (candidates[0].voteCount < candidates[1].voteCount) {
+        winningCandidateIndex = 1;
+    } else {
+        
+        winningCandidateIndex = 2;
     }
+    return (winningCandidateIndex, candidates[0].voteCount, candidates[1].voteCount);
+}
+
 }
