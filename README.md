@@ -15,7 +15,11 @@ A decentralized platform that facilitates scientists and researchers in publishi
 
 ![Working Process](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/Working.png)
 
-![Working Process](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/peer%20review%20process.png)
+![Peer Review Process](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/peer%20review%20process.png)
+## Tests / How to use
+## Contribute
+## Credits
+## License
 
 
 
