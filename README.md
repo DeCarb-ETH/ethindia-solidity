@@ -23,7 +23,7 @@ A decentralized platform that facilitates scientists and researchers in publishi
 - [vote](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/vote.sol) :=
 ## How DeEx3 DAO works
 ### Working
-![Working Process](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/Working.png)
+![Working Process](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/workflow.png)
 ### Peer review
 ![Peer Review Process](https://github.com/DeCarb-ETH/ethindia-solidity/blob/main/peer%20review%20process.png)
 ## Tests / How to use
