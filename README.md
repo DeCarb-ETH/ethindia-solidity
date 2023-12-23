@@ -59,7 +59,7 @@ Slash : 0x942516c214757915fff66ffde12db2782b93528d
 ## Contribute
 We look forward to all contributions.
 ## License
-MIT license.
+MIT license..
 
 
 
